@@ -1,0 +1,213 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --border: #e5e5e5;
+  --accent: #000000;
+  --danger: #b91c1c;
+  --font-main: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #e0e0e0;
+    --muted: #888888;
+    --border: #262626;
+    --accent: #ffffff;
+    --danger: #ef4444;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 40px 0 20px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+p.subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--muted);
+}
+
+/* Projects List */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.project-title {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.project-links {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.project-tags {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--muted);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+input, textarea {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 0;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid var(--text);
+  border-color: var(--text);
+}
+
+button {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  border-radius: 0;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.feedback {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.feedback.success {
+  display: block;
+  color: var(--text);
+}
+
+.feedback.error {
+  display: block;
+  color: var(--danger);
+}
+
+/* Admin Dashboard Specific */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.admin-table th, .admin-table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+}
+
+.admin-table th {
+  background: rgba(128, 128, 128, 0.05);
+}
+
+.btn-delete {
+  background: var(--danger);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+nav.admin-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
